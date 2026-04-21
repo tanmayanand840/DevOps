@@ -1,0 +1,41 @@
+mkdir flask-devops
+cd flask-devops
+
+
+python -m venv venv
+
+
+venv\Scripts\Activate
+
+
+pip install flask
+
+
+app.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello DevOps!"
+
+@app.route('/health')
+def health():
+    return {"status": "running"}
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
+
+
+python app.py
+
+
+pip freeze > requirements.txt
+
+
+
+$env:FLASK_APP="app.py"
+$env:FLASK_ENV="development"
+flask run
