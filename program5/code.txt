@@ -1,13 +1,13 @@
 ﻿
 
-## ≡ƒö╣ Step 1: Open VS Code
+## Step 1: Open VS Code
 
 * Open Visual Studio Code
 * Go to **Extensions**
 
 ---
 
-## ≡ƒö╣ Step 2: Install Required Extensions
+## Step 2: Install Required Extensions
 
 Install:
 
@@ -17,7 +17,7 @@ Install:
 
 ---
 
-## ≡ƒö╣ Step 3: Create Project
+## Step 3: Create Project
 
 * Open a **new folder**
 * Click **New File / Create Java Project**
@@ -32,7 +32,7 @@ Install:
 
 ---
 
-## ≡ƒö╣ Step 4: Go to File Location
+## Step 4: Go to File Location
 
 From your notes:
 
@@ -44,7 +44,7 @@ Open **App.java**
 
 ---
 
-## ≡ƒö╣ Step 5: Write This Code (same as your notebook)
+## Step 5: Write This Code (same as your notebook)
 
 ```java
 import java.awt.Desktop;
@@ -71,7 +71,7 @@ public class App {
 
 ---
 
-## ≡ƒö╣ Step 6: Add Gradle Task (IMPORTANT)
+## Step 6: Add Gradle Task (IMPORTANT)
 
 Open `build.gradle`
 Add at bottom:
@@ -86,7 +86,7 @@ task hello {
 
 ---
 
-## ≡ƒö╣ Step 7: Run Commands (as in your notes)
+## Step 7: Run Commands (as in your notes)
 
 Open terminal in VS Code:
 
@@ -109,31 +109,26 @@ Got you ≡ƒæì ΓÇö here is your **manual Gradle setup EXACTLY like your no
 ---
 
 # ≡ƒÜÇ Γ£à MANUAL GRADLE (STEP-BY-STEP)
-
-≡ƒö╣ Step 1: Download Gradle
+ Step 1: Download Gradle
 Search ΓÇ£Gradle downloadΓÇ¥
-Download binary-only zip
-≡ƒö╣ Step 2: Extract
+Download binary-only zip Step 2: Extract
 Extract zip file
 Copy folder to:
-C:\Gradle
-≡ƒö╣ Step 3: Copy bin Path
+C:\Gradle Step 3: Copy bin Path
 
 Go inside:
 
 C:\Gradle\gradle-8.x\bin
 
 ≡ƒæë Copy this path
-
-≡ƒö╣ Step 4: Set Environment Variable
+ Step 4: Set Environment Variable
 Open Edit System Environment Variables
 Go to Environment Variables
 In Path ΓåÆ Edit ΓåÆ New
 
 Paste:
 
-C:\Gradle\gradle-8.x\bin
-≡ƒö╣ Step 5: Verify
+C:\Gradle\gradle-8.x\bin Step 5: Verify
 
 Open terminal:
 
@@ -142,11 +137,11 @@ gradle --version
 ≡ƒæë If version shows ΓåÆ Γ£à Done
 
 
-## ≡ƒö╣ 1. Open CMD
+## 1. Open CMD
 
 ---
 
-## ≡ƒö╣ 2. Create Project Folder
+## 2. Create Project Folder
 
 ```bash
 mkdir gradleproject
@@ -155,7 +150,7 @@ cd gradleproject
 
 ---
 
-## ≡ƒö╣ 3. Initialize Gradle Project
+## 3. Initialize Gradle Project
 
 ```bash
 gradle init
@@ -163,7 +158,7 @@ gradle init
 
 ---
 
-## ≡ƒö╣ 4. SELECT OPTIONS (VERY IMPORTANT ΓÜá∩╕Å)
+## 4. SELECT OPTIONS (VERY IMPORTANT ΓÜá∩╕Å)
 
 When prompts come, choose like this:
 
@@ -199,7 +194,7 @@ BUILD SUCCESSFUL
 
 ---
 
-## ≡ƒö╣ 5. Check Project Files
+## 5. Check Project Files
 
 ```bash
 dir
@@ -217,7 +212,7 @@ settings.gradle
 
 ---
 
-## ≡ƒö╣ 6. Go to build.gradle
+## 6. Go to build.gradle
 
 ```bash
 cd app
@@ -232,7 +227,7 @@ build.gradle
 
 ---
 
-## ≡ƒö╣ 7. Open build.gradle
+## 7. Open build.gradle
 
 ```bash
 notepad build.gradle
@@ -240,7 +235,7 @@ notepad build.gradle
 
 ---
 
-## ≡ƒö╣ 8. Add Custom Task (IMPORTANT)
+## 8. Add Custom Task (IMPORTANT)
 
 At bottom, paste:
 
@@ -256,7 +251,7 @@ Save and close Γ£à
 
 ---
 
-## ≡ƒö╣ 9. Go Back to Main Folder
+## 9. Go Back to Main Folder
 
 ```bash
 cd ..
@@ -264,7 +259,7 @@ cd ..
 
 ---
 
-## ≡ƒö╣ 10. Run Commands
+## 10. Run Commands
 
 ### ≡ƒæë Show tasks
 
