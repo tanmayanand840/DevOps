@@ -1,17 +1,36 @@
-mkdir flask-devops
-cd flask-devops
+1️⃣ Update System
+sudo apt update
+2️⃣ Check Python Installation
+python3 --version
+3️⃣ Install pip (Python package manager)
+sudo apt install python3-pip -y
 
+Check:
 
-python -m venv venv
+pip --version
+4️⃣ Install Virtual Environment
+sudo apt install python3-venv -y
+5️⃣ Create Project Directory
+mkdir devops2
+cd devops2
+6️⃣ Create Virtual Environment
+python3 -m venv flaskenv
+7️⃣ Activate Virtual Environment
+source flaskenv/bin/activate
 
+👉 After activation, you’ll see (flaskenv) in terminal
 
-venv\Scripts\Activate
-
-
+8️⃣ Install Flask
 pip install flask
 
+Check version:
 
-app.py
+flask --version
+9️⃣ Create Flask App
+nano app.py
+
+Paste this code:
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -20,22 +39,92 @@ app = Flask(__name__)
 def home():
     return "Hello DevOps!"
 
-@app.route('/health')
-def health():
-    return {"status": "running"}
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
+🔟 Run Flask Application
+python3 app.py
+
+👉 Open browser:
+
+http://localhost:5000
+⚙️ Extra Steps (Important for Viva)
+✅ Build Script (Automation)
+nano build.sh
+#!/bin/bash
+echo "Setting up environment..."
+python3 -m venv flaskenv
+source flaskenv/bin/activate
+pip install flask
+echo "Environment setup complete. Run the app using python3 app.py"
+
+Run:
+
+bash build.sh
+🧪 Testing (Unit Test)
+
+Create:
+
+nano test.py
+
+Basic test (from page 6):
+
+import unittest
+from app import app
+
+class TestApp(unittest.TestCase):
+    def test_home(self):
+        tester = app.test_client(self)
+        response = tester.get('/')
+        self.assertEqual(response.status_code, 200)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    unittest.main()
 
+Run:
 
+python3 test.py
+⚙️ Configuration (.env)
+nano .env
+FLASK_PORT=5000
 
-python app.py
+Install dotenv:
 
+pip install python-dotenv
 
-pip freeze > requirements.txt
+Modify app:
 
+import os
 
+port = int(os.getenv("FLASK_PORT", 5000))
+app.run(host='0.0.0.0', port=port)
+📊 Monitoring (Health Check)
 
-$env:FLASK_APP="app.py"
-$env:FLASK_ENV="development"
-flask run
+Add route:
+
+@app.route('/health')
+def health():
+    return {"status": "up"}, 200
+
+updated app.pyfrom flask import Flask
+import os
+
+app = Flask(__name__)
+
+# Home Route
+@app.route('/')
+def home():
+    return "Hello DevOps!"
+
+# Health Check Route
+@app.route('/health')
+def health():
+    return {"status": "up"}, 200
+
+# Run Application
+if __name__ == "__main__":
+    port = int(os.getenv("FLASK_PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
+
+Test:
+
+http://localhost:5000/health
