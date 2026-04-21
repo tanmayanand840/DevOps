@@ -1,0 +1,64 @@
+mkdir myproject
+cd myproject
+
+
+git init
+
+
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+
+
+echo Hello World > file.txt
+
+
+git status
+
+
+git add file.txt
+
+
+git commit -m "First commit"
+
+
+git log
+
+git branch newbranch
+
+git checkout newbranch
+
+
+git switch newbranch
+
+
+echo New change >> file.txt
+git add .
+git commit -m "Update in branch"
+
+
+git checkout main
+
+git merge newbranch
+
+
+git remote add origin <repo_url>
+
+git push -u origin main
+
+git pull
+
+
+git clone <url>
+
+git diff
+
+git reset <file>
+
+git rm <fike>
+
+git stash
+
+
+git stash pop
+
+git fetch
