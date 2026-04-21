@@ -1,0 +1,20 @@
+Open website: https://snyk.io
+Create account using:
+GitHub
+Import Project
+After login, click Import Project.
+Select your GitHub repository.
+Click Add selected repositories.
+Snyk scans your project automatically.
+[It shows vulnerabilities based on severity:
+C = Critical
+H = High
+M = Medium
+L = Low]
+
+
+IN VS CODE TERMINALOF YOUR PROJECT ROOT 
+npm install -g snyk
+snyk auth
+cd project-folder-name(WHERE PACKAGE.JSON IS THERE)
+snyk test
