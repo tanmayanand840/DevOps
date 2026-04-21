@@ -1,0 +1,288 @@
+
+
+## 🔹 Step 1: Open VS Code
+
+* Open Visual Studio Code
+* Go to **Extensions**
+
+---
+
+## 🔹 Step 2: Install Required Extensions
+
+Install:
+
+* Gradle for Java
+* Extension Pack for Java
+* Groovy
+
+---
+
+## 🔹 Step 3: Create Project
+
+* Open a **new folder**
+* Click **New File / Create Java Project**
+* Select:
+
+  * **Java Project**
+  * Choose **Gradle**
+  * Choose **Groovy**
+  * Press Enter
+
+👉 This creates your Gradle project
+
+---
+
+## 🔹 Step 4: Go to File Location
+
+From your notes:
+
+```
+app → src → main → java → App.java
+```
+
+Open **App.java**
+
+---
+
+## 🔹 Step 5: Write This Code (same as your notebook)
+
+```java
+import java.awt.Desktop;
+import java.net.URI;
+
+public class App {
+    public static void main(String[] args) {
+        try {
+            String url = "https://www.google.com";
+
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.browse(new URI(url));
+            } else {
+                System.out.println("Desktop not supported");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
+## 🔹 Step 6: Add Gradle Task (IMPORTANT)
+
+Open `build.gradle`
+Add at bottom:
+
+```groovy
+task hello {
+    doLast {
+        println("HelloGradle");
+    }
+}
+```
+
+---
+
+## 🔹 Step 7: Run Commands (as in your notes)
+
+Open terminal in VS Code:
+
+### Run task:
+
+```bash
+gradle hello
+```
+
+### Run project:
+
+```bash
+gradle run
+```
+
+---
+
+Got you 👍 — here is your **manual Gradle setup EXACTLY like your notebook**, with proper `cd` commands + what to press during `gradle init`.
+
+---
+
+# 🚀 ✅ MANUAL GRADLE (STEP-BY-STEP)
+
+🔹 Step 1: Download Gradle
+Search “Gradle download”
+Download binary-only zip
+🔹 Step 2: Extract
+Extract zip file
+Copy folder to:
+C:\Gradle
+🔹 Step 3: Copy bin Path
+
+Go inside:
+
+C:\Gradle\gradle-8.x\bin
+
+👉 Copy this path
+
+🔹 Step 4: Set Environment Variable
+Open Edit System Environment Variables
+Go to Environment Variables
+In Path → Edit → New
+
+Paste:
+
+C:\Gradle\gradle-8.x\bin
+🔹 Step 5: Verify
+
+Open terminal:
+
+gradle --version
+
+👉 If version shows → ✅ Done
+
+
+## 🔹 1. Open CMD
+
+---
+
+## 🔹 2. Create Project Folder
+
+```bash
+mkdir gradleproject
+cd gradleproject
+```
+
+---
+
+## 🔹 3. Initialize Gradle Project
+
+```bash
+gradle init
+```
+
+---
+
+## 🔹 4. SELECT OPTIONS (VERY IMPORTANT ⚠️)
+
+When prompts come, choose like this:
+
+```
+Enter selection (default: Java) → 3   (Application)
+```
+
+```
+Enter target Java version → 21  (or press Enter)
+```
+
+```
+Project name → press Enter
+```
+
+```
+Select application structure → 1  (Single application project)
+```
+
+```
+Select build script DSL → 2  (Groovy)
+```
+
+```
+Generate build using new APIs → press Enter (no)
+```
+
+👉 After this:
+
+```
+BUILD SUCCESSFUL
+```
+
+---
+
+## 🔹 5. Check Project Files
+
+```bash
+dir
+```
+
+👉 You’ll see:
+
+```
+app
+gradle
+gradlew
+gradlew.bat
+settings.gradle
+```
+
+---
+
+## 🔹 6. Go to build.gradle
+
+```bash
+cd app
+dir
+```
+
+👉 You will see:
+
+```
+build.gradle
+```
+
+---
+
+## 🔹 7. Open build.gradle
+
+```bash
+notepad build.gradle
+```
+
+---
+
+## 🔹 8. Add Custom Task (IMPORTANT)
+
+At bottom, paste:
+
+```groovy
+task hello {
+    doLast {
+        println("HelloGradle");
+    }
+}
+```
+
+Save and close ✅
+
+---
+
+## 🔹 9. Go Back to Main Folder
+
+```bash
+cd ..
+```
+
+---
+
+## 🔹 10. Run Commands
+
+### 👉 Show tasks
+
+```bash
+gradle tasks
+```
+
+### 👉 Run your task
+
+```bash
+gradle hello
+```
+
+👉 Output:
+
+```
+HelloGradle
+```
+
+---
+
