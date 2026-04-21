@@ -1,0 +1,318 @@
+https://chatgpt.com/share/69e774d0-4290-83e8-b216-e4e77d781083
+
+STEP 1: Install JDK (Java Development Kit)
+🔍 What you are doing
+
+You are installing Java so that Jenkins can run (because Jenkins is built on Java).
+
+🌐 1. Download JDK
+7
+Open Chrome
+
+Search:
+
+adoptium jdk download
+Open Adoptium (Eclipse Temurin) website
+Select:
+Version → Latest LTS (Recommended)
+OS → Windows
+Package → x64 MSI Installer
+Click Download
+💻 2. Install JDK
+Go to Downloads folder
+Double click .msi file
+In setup:
+Click Next
+
+Choose:
+
+✔ Install for all users
+✔ Install to local hard drive
+Click Next → Install
+Wait until installation completes
+Click Finish
+⚙️ 3. Set Environment Variables (VERY IMPORTANT)
+5
+🔹 Step A: Copy JDK Path
+
+Go to:
+
+C:\Program Files\Eclipse Adoptium\
+
+Open folder → copy path like:
+
+C:\Program Files\Eclipse Adoptium\jdk-21.x.x
+🔹 Step B: Set JAVA_HOME
+
+Search:
+
+Environment Variables
+
+Click:
+
+Edit system environment variables
+
+Click:
+
+Environment Variables
+
+Under System Variables → New
+
+Variable Name: JAVA_HOME
+Variable Value: (paste copied path)
+🔹 Step C: Add to PATH
+In System Variables
+
+Select:
+
+Path → Edit → New
+
+Add:
+
+%JAVA_HOME%\bin
+Click OK → OK → OK
+✅ 4. Verify Installation
+5
+Open Command Prompt
+
+Type:
+
+java -version
+✔ Expected Output:
+java version "21.x.x"
+
+
+
+
+
+
+
+
+
+
+⚙️ STEP 2: Install Jenkins
+🌐 1. Download Jenkins
+6
+Open Chrome
+
+Search:
+
+Jenkins download
+Open official site → Jenkins
+
+Click:
+
+Download Jenkins
+
+Select:
+
+Windows → .msi installer
+💻 2. Install Jenkins
+Go to Downloads
+Double click .msi
+During installation:
+
+👉 Choose:
+
+Run service as Local System (recommended)
+
+👉 Port:
+
+8080 (default)
+
+👉 Click:
+
+Test Port
+If fail → change to 8000
+
+Then:
+
+Next → Install
+🔐 STEP 3: Fix Service Permission (Important)
+
+Search:
+
+Local Security Policy
+
+Go to:
+
+User Rights Assignment
+
+Open:
+
+Log on as a service
+
+Add:
+
+Administrator
+Click Apply
+▶️ STEP 4: Start Jenkins
+7
+
+Search:
+
+Services
+
+Find:
+
+Jenkins
+Right click → Start
+🌐 STEP 5: Open Jenkins
+
+Open browser and go:
+
+http://localhost:8080
+🔑 STEP 6: Unlock Jenkins
+4
+Go to:
+C:\Program Files\Jenkins
+Open file:
+jenkins.err
+Copy password
+Paste in browser
+
+
+
+
+
+
+
+
+
+STEP 1: Start Jenkins Service
+📍 Open Services
+5
+Press Windows key
+
+Type:
+
+Services
+Open it
+▶️ Start Jenkins
+
+Find:
+
+Jenkins
+Right click → Start
+
+👉 Status should become:
+
+Running
+🌐 STEP 2: Open Jenkins in Browser
+
+Open Chrome and go:
+
+http://localhost:8080
+🔑 STEP 3: Unlock Jenkins
+4
+
+You’ll see:
+👉 Unlock Jenkins screen
+
+📂 Get Password
+
+Go to:
+
+C:\Program Files\Jenkins
+
+Open file:
+
+jenkins.err
+
+👉 Copy the password
+
+🔓 Paste in browser
+Paste password
+Click Continue
+⚙️ STEP 4: Install Plugins
+
+Click:
+
+Install Suggested Plugins
+
+⏳ Wait (2–5 minutes)
+
+👤 STEP 5: Create Admin User
+Enter username + password
+
+Click:
+
+Save and Continue → Save and Finish
+
+Then click:
+
+Start using Jenkins
+🎯 Next (FINAL LAB PART)
+
+After this, tell me:
+👉 "jenkins opened"
+
+I’ll guide you to:
+✅ Create project
+✅ Run build
+✅ Show console output (your exam answer)
+
+You’re doing great — just one more step 👍
+
+
+
+
+STEP 6: Create Your First CI Project
+📍 Create New Job
+5
+
+On Jenkins dashboard, click:
+
++ New Item
+
+Enter name:
+
+proj1
+
+Select:
+
+Freestyle Project
+Click OK
+⚙️ STEP 7: Add Build Step
+📍 Configure Build
+6
+
+Scroll to:
+
+Build Steps
+
+Click:
+
+Add build step
+
+Select:
+
+Execute Windows Batch Command
+✍️ Enter Command
+
+Paste this:
+
+echo proj1 is created %date% %time%
+
+👉 This is your CI task (automation step)
+
+💾 Save
+
+Click:
+
+Save
+▶️ STEP 8: Run Build
+
+Click:
+
+Build Now
+📊 STEP 9: Check Output
+7
+Click build number (e.g., #1)
+
+Click:
+
+Console Output
+✅ Expected Output
+proj1 is created 21-04-2026 10:45:32
+Finished: SUCCESS
