@@ -1,0 +1,31 @@
+sudo apt update
+sudo apt install ansible -y
+sudo mkdir -p /etc/ansible
+sudo nano /etc/ansible/hosts
+Paste inside hosts file:
+[local]
+localhost ansible_connection=local
+Ctrl + X
+Y
+Enter
+nano setup.yml
+#inside setupyml
+---
+- name: Basic server setup
+  hosts: local
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install curl
+      apt:
+        name: curl
+        state: present
+        
+        Ctrl + X
+Y
+Enter
+sudo ansible-playbook -i /etc/ansible/hosts setup.yml
