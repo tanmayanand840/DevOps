@@ -1,0 +1,21 @@
+in cmd : pip install selenium
+
+https://googlechromelabs.github.io/chrome-for-testing/
+
+Search: ChromeDriver download
+Download version matching your Chrome
+Extract ZIP file
+
+make a folder in c:/drive and extract the zip file in that
+
+
+✅ Verify once (VERY IMPORTANT)
+
+Go to:
+👉 C:\drive\chromedriver-win64
+
+Check:
+✔ You see chromedriver.exe
+
+
+run the 3 python program and make sure that file path is correct
