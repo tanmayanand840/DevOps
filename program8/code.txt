@@ -1,0 +1,20 @@
+In PowerShell (Run as Admin)
+
+choco install minikube kubernetes-cli -y
+
+
+
+vs code terminal
+minikube start --driver=docker
+
+docker build -t congrats-app .
+
+minikube image load congrats-app
+
+kubectl run congrats-app --image=congrats-app --image-pull-policy=Never --port=80
+
+kubectl get pods
+
+kubectl expose pod congrats-app --type=NodePort --port=80
+
+minikube service congrats-app
